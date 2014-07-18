@@ -199,7 +199,7 @@ public class MemoryViewFX extends Application {
 
         Sent_s = new HashMap(); //derivation chain
 
-        mem = nar.memory;
+        mem = nar.nar.memory;
 
     }
 

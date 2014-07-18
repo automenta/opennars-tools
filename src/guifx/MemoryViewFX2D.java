@@ -27,8 +27,6 @@ import javafx.animation.KeyFrame;
 import javafx.animation.TimelineBuilder;
 import javafx.application.Application;
 import static javafx.application.Application.launch;
-import static javafx.application.Application.launch;
-import static javafx.application.Application.launch;
 import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.scene.CacheHint;
@@ -69,7 +67,7 @@ public class MemoryViewFX2D extends Application {
     
     int minBagLevel = 10;
     
-    private NARSwing nar;
+    private NARSwing narswing;
     private HashSet<TermVertex> obj;
 
 
@@ -92,7 +90,7 @@ public class MemoryViewFX2D extends Application {
         
     @Override
     public void start(Stage stage) {
-        nar = new NARSwing("nal/Examples/Example-MultiStep-edited.txt");
+        narswing = new NARSwing("nal/Examples/Example-MultiStep-edited.txt");
         //nar = new NARSwing("nal/Examples-1.3.3/Example_Recursion.txt");
 
        vertexDisplay = new Group();
@@ -186,7 +184,7 @@ public class MemoryViewFX2D extends Application {
 
         Sent_s = new HashMap(); //derivation chain
 
-        mem = nar.memory;
+        mem = narswing.nar.memory;
 
     }
 
