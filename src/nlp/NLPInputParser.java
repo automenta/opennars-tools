@@ -4,13 +4,13 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.StringReader;
 import nars.io.TextInput;
-import nars.io.TextInputParser;
+import nars.io.TextReaction;
 import nars.io.Symbols;
 import nars.core.NAR;
 import org.python.util.PythonInterpreter;
 
 
-public class NLPInputParser implements TextInputParser {
+public class NLPInputParser implements TextReaction {
     
     final static PythonInterpreter python = new PythonInterpreter();
     static {
@@ -42,7 +42,7 @@ python.execfile(NLPInputParser.class.getResourceAsStream("corenlp/stanford_to_na
     }
     
     @Override
-    public boolean parse(NAR nar, String input, TextInputParser lastHandler) {
+    public boolean react(NAR nar, String input, TextReaction lastHandler) {
         try {
             boolean explicit = true;
             char c = input.charAt(0);
@@ -135,7 +135,7 @@ python.execfile(NLPInputParser.class.getResourceAsStream("corenlp/stanford_to_na
     /*
     public static void main(String[] args) {
         NAR n = new NAR();
-        new NLPInputParser("host", 9100).parse(n, "This is a sentence.", null);
+        new NLPInputParser("host", 9100).react(n, "This is a sentence.", null);
     }
     */
 }

@@ -62,7 +62,7 @@ public class MemoryViewFX extends Application {
 
     final int fps = 30;
     
-    private NARSwing nar;
+    private NARSwing swing;
     private ArrayList<TermVertex> obj;
 
     final PerspectiveCamera camera = new PerspectiveCamera(true);
@@ -84,7 +84,7 @@ public class MemoryViewFX extends Application {
 
     @Override
     public void start(Stage stage) {
-        nar = new NARSwing("nal/Examples/Example-MultiStep-edited.txt");
+        swing = new NARSwing("nal/Examples/Example-MultiStep-edited.txt");
 
 
         camera.setNearClip(CAMERA_NEAR_CLIP);
@@ -199,7 +199,7 @@ public class MemoryViewFX extends Application {
 
         Sent_s = new HashMap(); //derivation chain
 
-        mem = nar.nar.memory;
+        mem = swing.nar.memory;
 
     }
 
